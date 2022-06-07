@@ -1,18 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
-import { useState } from 'react';
+import Login from './components/Login';
+import Dashboard from './components/Dashboard';
+import NotFound from './components/NotFound';
+import Layout from './components/Layout';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-const items = [
-  {title: "hello world", pages: 236, id:1, isFiction:true},
-  {title: "book one", pages: 140, id:2, isFiction:false},
-  {title: "book two", pages: 121, id:3, isFiction:false},
-];
+
 
 function App() {
   return (
-    <div className="App">
-      <h1>Login</h1>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout/>}>
+          <Route index element={<Login/>}/>
+          <Route path="dashboard" element={<Dashboard/>}/>
+          <Route path="*" element={<NotFound/>}/>
+        </Route>
+      </Routes>
+    </BrowserRouter>
+
   );
 }
 
