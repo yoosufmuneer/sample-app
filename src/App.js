@@ -1,23 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+
+const items = [
+  {title: "hello world", pages: 236, id:1, isFiction:true},
+  {title: "book one", pages: 140, id:2, isFiction:false},
+  {title: "book two", pages: 121, id:3, isFiction:false},
+];
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Login</h1>
     </div>
   );
 }
