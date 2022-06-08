@@ -1,5 +1,5 @@
 import { Row, Col, Button, Image} from 'react-bootstrap';
-import { useState, useEffect} from 'react';
+import { useState} from 'react';
 
 import artwork from '../assets/login_artwork.svg';
 
@@ -7,16 +7,10 @@ const Login = () => {
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [errorMessage, setErrorMessage] = useState('');
-
-    useEffect(() =>{
-        setErrorMessage('');
-
-    }, [username,password])
+    const [errorMessage, setErrorMessage] = useState([]);
 
     const handleSubmit = e =>{
         e.preventDefault();
-        console.log(username,password);
 
         setUsername('');
         setPassword('');
@@ -25,16 +19,15 @@ const Login = () => {
     return(
             <Row className='bg-white p-5 rounded shadow'>
                 <Col className="pt-3 pb-3 align-self-center justify-content-center d-none d-sm-block">
-                    <Image src={artwork} id="artwork"/>
+                    <img src={artwork} id="artwork"/>
                 </Col>
-                <Col className="pt-3 pb-3 align-self-center justify-content-center">
-                    
+                <Col className="pt-3 pb-3 align-self-center justify-content-center">                    
+                    <form className='formGrid' onSubmit={handleSubmit} >
                     <h1>Log In</h1>
-                    <form onSubmit={handleSubmit} className='formGrid'>
-                        <Col className='text-right pt-3 pb-3 '>
+                        <Col className='text-right pt-2 pb-2 '>
                             <label htmlFor='username' id='usernameLabel' className=''>Username</label>
                         </Col>
-                        <Col className='pt-3 pb-3'>
+                        <Col className='pt-2 pb-2'>
                             <input 
                                 type='text' 
                                 id='username'
@@ -42,12 +35,12 @@ const Login = () => {
                                 value = {username}
                                 required
                             />
-                            <p id='errorMessage'>{errorMessage}</p>
+                            <p id='errorMessage' className='text-danger pt-2'>{errorMessage}</p>
                         </Col>
-                        <Col className='pt-3 pb-3'>
+                        <Col className='pt-2 pb-2'>
                             <label htmlFor='password' id='passwordLabel'>Password</label>
                         </Col>
-                        <Col className='pt-3 pb-3'>
+                        <Col className='pt-2 pb-2'>
                             <input 
                                 type='password' 
                                 id='password'
@@ -55,10 +48,10 @@ const Login = () => {
                                 value = {password}
                                 required
                             />
-                            <p id='errorMessage'>{errorMessage}</p>
+                            <p id='errorMessage' className='text-danger'>{errorMessage}</p>
                         </Col>
                         <Col>
-                            <Button as="input" className="bg-danger " type="submit" value="Login" />
+                            <Button as="input" className="bg-danger pt-2" type="submit" value="Login" />
                         </Col>
                     </form>
                 </Col>

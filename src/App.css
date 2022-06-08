@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+*{
+  font-family: 'Inter',sans-serif;
+}
+
 #container{
   background-color: rgb(244, 246, 250);
   min-height: 100vh;
@@ -5,4 +11,12 @@
 
 #artwork{
   max-height: 60vh;
+}
+
+.menu_item>img{
+  max-width: 50%;
+}
+
+.active{
+  background-color: #ff1149;
 }
