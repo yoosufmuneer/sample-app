@@ -1,10 +1,11 @@
 import { Outlet } from "react-router-dom";
+import {Container} from "react-bootstrap";
 
 const Layout = () => {
     return(
-        <section className="App">
+        <Container fluid className='p-5' id="container">
             <Outlet/>
-        </section>
+        </Container>
     )
 }
 
