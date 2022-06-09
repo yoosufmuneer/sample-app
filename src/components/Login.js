@@ -1,4 +1,4 @@
-import { Row, Col, Button, Image} from 'react-bootstrap';
+import { Container,Row, Col, Button, Image} from 'react-bootstrap';
 import { useState} from 'react';
 
 import artwork from '../assets/login_artwork.svg';
@@ -17,6 +17,7 @@ const Login = () => {
     }
 
     return(
+        <Container className="container-fluid p-5">
             <Row className='bg-white p-5 rounded shadow'>
                 <Col className="pt-3 pb-3 align-self-center justify-content-center d-none d-sm-block">
                     <img src={artwork} id="artwork"/>
@@ -57,6 +58,7 @@ const Login = () => {
                 </Col>
                 
             </Row>
+        </Container>
     )
 }
 

@@ -3,7 +3,7 @@ import {Container} from "react-bootstrap";
 
 const Layout = () => {
     return(
-        <Container fluid className='p-5' id="container">
+        <Container fluid id="container">
             <Outlet/>
         </Container>
     )

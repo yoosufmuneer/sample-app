@@ -7,6 +7,7 @@
 #container{
   background-color: rgb(244, 246, 250);
   min-height: 100vh;
+  padding: 0;
 }
 
 #artwork{
@@ -25,6 +26,19 @@
   height: 100%;
   position: relative;
 }
-.active{
+.active,.button_main:hover{
   background-color: #ff1149;
+}
+
+.button_main:hover{
+  color: white;
+  border: #ff1149;
+}
+.button_main{
+  background-color: white;
+  width: 150%;
+}
+
+#user_info{
+  background-color: red;
 }
