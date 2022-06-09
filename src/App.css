@@ -15,8 +15,16 @@
 
 .menu_item>img{
   max-width: 50%;
+  position: absolute;
+  top: 50%;
+  bottom: 50%;
+  transform: translate(-50%, -50%);
 }
 
+.menu_item{
+  height: 100%;
+  position: relative;
+}
 .active{
   background-color: #ff1149;
 }

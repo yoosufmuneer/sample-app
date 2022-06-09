@@ -9,7 +9,7 @@ import tb_icon from '../assets/Group 565@3x.png';
 
 const NavBar =() =>{
     return(
-    <aside style={{display:"grid", gridTemplateRows:"repeat(7,10%)", minHeight:'100vh', maxWidth:'10vh', textAlign:'center', backgroundColor: "#253244",alignContent:'space-around'}}>
+    <aside style={{display:"grid", gridTemplateRows:"repeat(7,1fr)",alignItems:"center", minHeight:'100vh', maxWidth:'10vh', textAlign:'center', backgroundColor: "#253244",alignContent:'space-around'}}>
         <div className='menu_item active'>
             <img src={dashboard_icon}/>
         </div>
