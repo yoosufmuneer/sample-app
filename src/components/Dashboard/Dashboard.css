@@ -1,0 +1,6 @@
+.dashboard{
+    display:"grid";
+    grid-template-columns:"5vw repeat(11,1fr)";
+    grid-template-rows:"repeat(5,20vh)";
+    gap:"2%";
+}

@@ -4,7 +4,7 @@ import camera_icon from '../assets/Group 563@3x.png';
 import people_icon from '../assets/Group 548@3x.png';
 import briefcase_icon from '../assets/Group 549@3x.png';
 import search_icon from '../assets/Group 555@3x.png';
-import tb_icon from '../assets/Group 565@3x.png';
+import tb_icon from '../assets/Group 565@3x - Copy.png';
 
 
 const NavBar =() =>{

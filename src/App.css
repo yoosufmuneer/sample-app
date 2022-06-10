@@ -39,6 +39,54 @@
   width: 150%;
 }
 
-#user_info{
-  background-color: red;
+
+.nav-tabs .nav-link{
+  border-right: none !important;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 2vw;
+  color: lightgray;
+} 
+
+.nav-tabs .nav-link.active,.nav-link:hover,.nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus{
+  color: #ff1149 !important;
+  border:none;
 }
+
+#dashboard{
+  display:"grid";
+  grid-template-columns:"5vw repeat(11,1fr)";
+  grid-template-rows:"repeat(5,20vh)";
+  gap:"2%";
+}
+
+.map{
+  background-image: url(/src/assets/80-cool-grey.png);
+  height: 100%;
+  position: relative;
+}
+
+.map>*{
+  position: absolute;
+}
+
+.map_content{
+  max-width: 50%;
+  max-height: 50%;
+  bottom: 0%;
+  right: 0%;
+}
+
+.map_content.plus{
+  bottom: 30%;
+}
+
+.map_arrow{
+  bottom: 5%;
+  left: 50%;
+  right: 50%;
+  height: 8%;
+}
+
+
