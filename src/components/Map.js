@@ -6,7 +6,7 @@ import minus_image from '../assets/minus_button.png';
 
 const Map = () => {
     return(
-    <Container className="rounded shadow-sm" style={{gridColumn: "5/-1", gridRow:"2/4", padding:"1vw", backgroundColor:"white", width:"90%"}} >
+    <Container className="rounded shadow-sm dashboard_right map_container" >
             <div className='map'>
                 <img src={plus_image} className="map_content plus" />
                 <img src={minus_image}  className="map_content"/>
