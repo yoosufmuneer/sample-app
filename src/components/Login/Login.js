@@ -1,7 +1,7 @@
 import { Container,Row, Col, Button, Image} from 'react-bootstrap';
 import { useState} from 'react';
-
-import artwork from '../assets/login_artwork.svg';
+import "./Login.css";
+import artwork from '../../assets/login_artwork.svg';
 
 const Login = () => {
 
@@ -25,7 +25,7 @@ const Login = () => {
                 <Col className="pt-3 pb-3 align-self-center justify-content-center">                    
                     <form className='formGrid' onSubmit={handleSubmit} >
                     <h1>Log In</h1>
-                        <Col className='text-right pt-2 pb-2 '>
+                        <Col className='pt-2 pb-2 '>
                             <label htmlFor='username' id='usernameLabel' className=''>Username</label>
                         </Col>
                         <Col className='pt-2 pb-2'>

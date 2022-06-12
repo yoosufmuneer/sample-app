@@ -1,0 +1,20 @@
+.nav-item:hover,.nav-item:active,.nav-item:first-child{
+    border-bottom: 0.3em solid #ff1149;
+}
+
+.nav-item{
+    flex-grow:1;
+}
+
+.tab-item{
+    padding:0% 5% 0% 5%;
+    border:1px solid gray;
+}
+
+.tab-item>img{
+    width:1%;
+}
+
+.nav-link{
+    margin-bottom: 0 !important;
+}

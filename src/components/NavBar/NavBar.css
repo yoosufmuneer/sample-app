@@ -1,0 +1,26 @@
+aside{
+    display:grid;
+    grid-template-rows:repeat(9,1fr);
+    align-items:center;
+    min-height:100vh;
+    text-align:center;
+    background-color: #253244;
+    align-content:space-around;
+}
+
+.menu_item>img{
+    max-width: 40%;
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+.menu_item{
+    height: 100%;
+    position: relative;
+}
+
+.last_child{
+    grid-row: 9/ 10;
+}

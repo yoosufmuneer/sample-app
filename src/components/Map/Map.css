@@ -1,0 +1,31 @@
+.map{
+    background-image: url(/src/assets/80-cool-grey.png);
+    height: 100%;
+    position: relative;
+}
+
+.map>*{
+    position: absolute;
+  }
+  
+.map_content{
+    max-width: 30%;
+    max-height: 30%;
+    bottom: 0%;
+    right: 0%;
+}
+
+.map_content.plus{
+    bottom: 30%;
+}
+
+.map_arrow{
+    bottom: 5%;
+    left: 50%;
+    right: 50%;
+    height: 8%;
+}
+
+.map_container{
+    grid-row:2 / 4;
+}
