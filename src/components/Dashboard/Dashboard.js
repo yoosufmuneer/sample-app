@@ -3,21 +3,40 @@ import "./Dashboard.css";
 import Card from "../Card/Card";
 import Map from "../Map/Map";
 import History from "../History/History";
+import Header from "../Header/Header";
 
-import Sos_Image from "../../assets/sos_image.png";
+import { useState} from 'react';
 
 const Dashboard =() =>{
+    const [mapStyle, setMapStyle] = useState('map-container');
+    const [arrowStyle, setArrowStyle] = useState('map-arrow');
+    const [arrowTextStyle, setArrowTextStyle] = useState('d-none');
+    const [historyContainerStyle, sethistoryContainerStyle] = useState('');
+
+    let handleClick = () =>{
+        // Flips Arrow from up to down & resizes container
+        // Uses CSS classes with grid & rotate to achieve that
+        if(mapStyle.includes('map-container-resize')){
+            setMapStyle('map-container');
+            setArrowStyle('map-arrow rotate-360');
+            setArrowTextStyle('d-none');
+            sethistoryContainerStyle('');
+        }
+        else{
+            setMapStyle('map-container-resize');
+            setArrowStyle('map-arrow rotate-180');
+            setArrowTextStyle('');
+            sethistoryContainerStyle('history-resize');
+        }
+    };
+
     return(
     <section className="dashboard_container">
         <NavBar/>
-        <section className="dashboard_header">
-            <h1>Monitor</h1>
-            <button className="rounded p-2 button_main">Message</button>
-            <img src={Sos_Image}/>
-        </section>
+        <Header title="Monitor"/>
         <Card/>
-        <Map/>  
-        <History/>      
+        <Map handleClick = {handleClick} map = {mapStyle} arrow = {arrowStyle} text={arrowTextStyle}/>  
+        <History username="Jason Burnette" style={historyContainerStyle}/>      
     </section>
     )
 }

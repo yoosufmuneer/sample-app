@@ -1,3 +1,9 @@
 #artwork{
     max-height: 60vh;
 }
+
+@media screen and (max-width:768px) {
+    #username,#password{
+        width: 100%;
+    }
+}

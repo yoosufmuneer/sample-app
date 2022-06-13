@@ -13,25 +13,25 @@ const NavBar =() =>{
     return(
     <aside>
         <div className='menu_item active'>
-            <img src={dashboard_icon}/>
+            <img src={dashboard_icon} alt="Home"/>
         </div>
         <div className='menu_item' >
-            <img src={building_icon}/>
+            <img src={building_icon} alt="Buildings"/>
         </div>
         <div className='menu_item'>
-            <img src={camera_icon}/>
+            <img src={camera_icon} alt="Security"/>
         </div>
         <div className='menu_item'>
-            <img src={people_icon}/>
+            <img src={people_icon} alt="Employees"/>
         </div>
         <div className='menu_item'>
-            <img src={briefcase_icon}/>
+            <img src={briefcase_icon} alt="Business"/>
         </div>
         <div className='menu_item'>
-            <img src={search_icon}/>
+            <img src={search_icon} alt="Search"/>
         </div>
         <div className='menu_item last_child'>
-            <img src={tb_icon}/>
+            <img src={tb_icon} alt="Username"/>
         </div>
 
     </aside>

@@ -19,13 +19,50 @@
     bottom: 30%;
 }
 
-.map_arrow{
+.map-arrow{
     bottom: 5%;
     left: 50%;
     right: 50%;
-    height: 8%;
+    height: 1em;
 }
 
-.map_container{
+.map-container{
     grid-row:2 / 4;
+}
+
+.map-container-resize{
+    grid-row: 2/3;
+}
+
+.map-arrow::before{
+    content: 'Scroll below';
+    columns: black;
+}
+
+.rotate-180{
+    -webkit-transform:rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.rotate-360{
+    -webkit-transform:rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+
+.reset-map{
+    border-radius: 2vw !important;
+    padding:0.5vw 2vw 0.5vw 2vw !important;
+    right: 2.5%;
+    top: 5%;
+}
+
+.center-align{
+    left: 42%;
+    bottom: 20%;
 }

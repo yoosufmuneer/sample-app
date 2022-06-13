@@ -20,7 +20,7 @@ const Login = () => {
         <Container className="container-fluid p-5">
             <Row className='bg-white p-5 rounded shadow'>
                 <Col className="pt-3 pb-3 align-self-center justify-content-center d-none d-sm-block">
-                    <img src={artwork} id="artwork"/>
+                    <img src={artwork} id="artwork" alt='Login Graphic'/>
                 </Col>
                 <Col className="pt-3 pb-3 align-self-center justify-content-center">                    
                     <form className='formGrid' onSubmit={handleSubmit} >

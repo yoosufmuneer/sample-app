@@ -16,11 +16,11 @@ const Card = () => {
             <div className="tab-content" id="myTabContent">
                 <div className="tab-pane fade show active p-2 pt-5  bg-white">
                     {userList.map((element) =>
-                        <p className="tab-item">
-                            <img src=""/>
-                            {element} 
-                            <img src={dot_menu_image}/>
-                        </p>
+                        <div className="tab-item content_item rounded p-2 mb-2">
+                            <div className='profile-generator'>F</div>
+                            <p className='mb-0'>{element} </p>
+                            <img src={dot_menu_image} className="dot-image" alt="menu icon"/>
+                        </div>
                     )}
                 </div>   
             </div>

@@ -1,49 +1,45 @@
 import { Container } from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import filter_image from '../../assets/Group 618@3x.png';
-
+import {UserList} from './UserList.js';
 import "./History.css";
 
-const History = () => {
-    const userList = {"history":[    
-        {"date":"12/May/2021", "alert":"off", "time":"2:12 p.m.", "location":"Colombo"},    
-        {"date":"13/Jun/2022", "alert":"on","time":"2:15 p.m.", "location":"Dehiwala"},  
-        {"date":"13/Jul/2022", "alert":"on", "time":"3:45 p.m.","location":"Jaffna"},    
-        {"date":"12/Jan/2023", "alert":"off", "time":"4:30 p.m.","location":"Colombo"}   
-    ]};  
-    const newList =userList.history;
+const History = ({style, username}) => {
+    
+    const newList =UserList.history;
+
     return(
-        <Container className="rounded shadow-sm bg-white history dashboard_right" >
-            <ul className="history_header">
-                <span className='history_span'><span className="bold">History</span>(Jason Burnette)</span>
+        <Container className={'rounded shadow-sm bg-white history dashboard_right ' + style} >
+            <div className="history_header">
+                <span className='history_span'><span className="bold">History</span>({username})</span>
                 <div className='vr'></div>
-                <li><Link to="/dashboard/" className='text-decoration-none text-black history_link'>All</Link></li>
-                <li><Link to="" className='text-decoration-none text-black history_link'>Location</Link></li>
-                <li><Link to="" className='text-decoration-none text-black history_link'>Message</Link></li>
-                <li><Link to="" className='text-decoration-none text-black history_link'>Alert</Link></li>
-                <li className="text-right"><img className="filter_image" src={filter_image}/></li>
-            </ul>
+                <Link to="/dashboard/" className='text-decoration-none history_link'>All</Link>
+                <Link to="" className='text-decoration-none history_link'>Location</Link>
+                <Link to="" className='text-decoration-none history_link'>Message</Link>
+                <Link to="" className='text-decoration-none history_link'>Alert</Link>
+                <div className="text-right"><img className="filter_image" src={filter_image} alt="Filter Icon"/></div>
+            </div>
             <hr/>
             <section className='history_content'>
                 <ul className='history_content_headings bold'>
-                    <li>Date</li>
-                    <li>Alert View</li>
-                    <li>Time</li>
-                    <li>Location</li>
+                    <li key={1}>Date</li>
+                    <li key={2}>Alert View</li>
+                    <li key={3}>Time</li>
+                    <li key={4}>Location</li>
                 </ul>
               
                 {newList.map((element) =>
                     <div className='history_content_item rounded'>
-                        <p>
+                        <p className='mb-0'>
                             {element["date"]}
                         </p>
-                        <p>
+                        <p className='mb-0'>
                             {element["alert"]}
                         </p>
-                        <p>
+                        <p className='mb-0'>
                             {element["time"]}
                         </p>
-                        <p>
+                        <p className='mb-0'>
                             <Link to="{element['location']}" className='text-decoration-none '>Live Map</Link>
                         </p>
                     </div>

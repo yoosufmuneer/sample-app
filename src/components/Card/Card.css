@@ -11,10 +11,31 @@
     border:1px solid gray;
 }
 
-.tab-item>img{
-    width:1%;
+.content_item{
+    align-items: center;
+    display: grid;
+    grid-template-columns: 15% 30% 30% 25% !important;
 }
-
 .nav-link{
     margin-bottom: 0 !important;
+}
+
+.dot-image{
+    grid-column: 4/5;
+    width: 5%;
+    margin-left: 90%;
+}
+
+.profile-generator{
+    background-color: rebeccapurple;
+    border-radius: 100%;
+    width: 1.5em;
+    height: 1.5em;
+    color: white;
+    text-align: center;
+    margin: 5%;
+}
+
+p{
+    margin: 0;
 }
