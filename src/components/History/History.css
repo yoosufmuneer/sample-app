@@ -10,7 +10,7 @@
     margin-right:1vw;
 }
 
-.history_link:active{
+.history_link:active, .active-select{
     color:#ff1149 !important;
     font-weight: bold;
     border-bottom: 0.1em solid #ff1149;

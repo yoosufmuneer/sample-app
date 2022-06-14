@@ -3,20 +3,32 @@ import {Link} from 'react-router-dom';
 import filter_image from '../../assets/Group 618@3x.png';
 import {UserList} from './UserList.js';
 import "./History.css";
+import { useState } from 'react';
 
 const History = ({style, username}) => {
+
+    const [active, setActive] = useState();
     
     const newList =UserList.history;
+
+    const handleClick = (text) =>{
+        // switch (event.target.)
+        switch (text){
+            case "location":
+                
+                break;
+        }
+    }
 
     return(
         <Container className={'rounded shadow-sm bg-white history dashboard_right ' + style} >
             <div className="history_header">
                 <span className='history_span'><span className="bold">History</span>({username})</span>
                 <div className='vr'></div>
-                <Link to="/dashboard/" className='text-decoration-none history_link'>All</Link>
-                <Link to="" className='text-decoration-none history_link'>Location</Link>
-                <Link to="" className='text-decoration-none history_link'>Message</Link>
-                <Link to="" className='text-decoration-none history_link'>Alert</Link>
+                <Link to="/dashboard/" className='text-decoration-none history_link' onClick={handleClick("all")}>All</Link>
+                <Link to="" className='text-decoration-none history_link' onClick={handleClick("location")}>Location</Link>
+                <Link to="" className='text-decoration-none history_link' onClick={handleClick("message")}>Message</Link>
+                <Link to="" className='text-decoration-none history_link' onClick={handleClick("alert")}>Alert</Link>
                 <div className="text-right"><img className="filter_image" src={filter_image} alt="Filter Icon"/></div>
             </div>
             <hr/>
