@@ -12,7 +12,7 @@ import tb_icon from '../../assets/Group 565@3x - Copy.png';
 const NavBar =() =>{
     return(
     <aside>
-        <div className='menu_item active'>
+        <div className='menu_item active-select'>
             <img src={dashboard_icon} alt="Home"/>
         </div>
         <div className='menu_item' >

@@ -14,7 +14,7 @@ const Dashboard =() =>{
     const [historyContainerStyle, sethistoryContainerStyle] = useState('');
 
     let handleClick = () =>{
-        // Flips Arrow from up to down & resizes container
+        // Flips Arrow from up to down & resizes map & history containers
         // Uses CSS classes with grid & rotate to achieve that
         if(mapStyle.includes('map-container-resize')){
             setMapStyle('map-container');

@@ -1,21 +1,22 @@
+import { useState } from 'react';
 import { Container } from 'react-bootstrap';
 import {Link} from 'react-router-dom';
+
 import filter_image from '../../assets/Group 618@3x.png';
-import {UserList} from './UserList.js';
+import {HistoryList} from './HistoryList.js';
 import "./History.css";
-import { useState } from 'react';
 
 const History = ({style, username}) => {
 
     const [active, setActive] = useState();
     
-    const newList =UserList.history;
+    const newList =HistoryList.history;
 
     const handleClick = (text) =>{
         // switch (event.target.)
         switch (text){
             case "location":
-                
+
                 break;
         }
     }

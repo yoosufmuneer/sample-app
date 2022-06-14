@@ -14,8 +14,9 @@
 .content_item{
     align-items: center;
     display: grid;
-    grid-template-columns: 15% 30% 30% 25% !important;
+    grid-template-columns: 15% 50% 10% 25% !important;
 }
+
 .nav-link{
     margin-bottom: 0 !important;
 }
