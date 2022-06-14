@@ -1,7 +1,7 @@
 import {Tab,Tabs} from "react-bootstrap";
 
 import './Card.css';
-import {UserList} from './UserList.js';
+import {user_items} from './UserList.js';
 import dot_menu_image from "../../assets/Group 566_4@3x.png";
 
 const ListItem = ({name, type, desiredType}) => {
@@ -17,21 +17,25 @@ const ListItem = ({name, type, desiredType}) => {
     }
 }
 
+const style = {
+
+}
+
 const Card = () => {
-    const userList = ["Abcd","asd","fdf"];
-    const staffList = UserList.users;
 
     return (
         <section className="rounded shadow-sm bg-white dashboard_left">
-            <Tabs defaultActiveKey="staff" id="uncontrolled-tab-example" className="mb-3">
+            <Tabs defaultActiveKey="staff" className="mb-3">
                 <Tab eventKey="staff" title="Staff">
-                    {staffList.map((element) =>
-                        <ListItem name = {element["name"]} type={element['type']} desiredType= "employee"/>
+                    {user_items.map((element) =>
+                        <ListItem style={style}name = {element.name} 
+                        type={element.type} desiredType= "employee" key={element.key}/>
                     )}                
                 </Tab>
                 <Tab eventKey="employee" title="Employee">
-                    {staffList.map((element) =>
-                        <ListItem name = {element["name"]} type={element['type']} desiredType= "staff"/>
+                    {user_items.map((element) =>
+                        <ListItem name = {element.name} type={element.type} 
+                        desiredType= "staff" key={element.key}/>
                     )}    
                 </Tab>
             </Tabs>

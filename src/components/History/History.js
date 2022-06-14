@@ -3,21 +3,23 @@ import { Container } from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 
 import filter_image from '../../assets/Group 618@3x.png';
-import {HistoryList} from './HistoryList.js';
+import {history_items} from './HistoryList.js';
+import {items} from './SortItems.js';
 import "./History.css";
 
 const History = ({style, username}) => {
 
     const [active, setActive] = useState();
-    
-    const newList =HistoryList.history;
+
 
     const handleClick = (text) =>{
         // switch (event.target.)
         switch (text){
             case "location":
 
-                break;
+            return
+            
+            break;
         }
     }
 
@@ -34,26 +36,25 @@ const History = ({style, username}) => {
             </div>
             <hr/>
             <section className='history_content'>
-                <ul className='history_content_headings bold'>
-                    <li key={1}>Date</li>
-                    <li key={2}>Alert View</li>
-                    <li key={3}>Time</li>
-                    <li key={4}>Location</li>
-                </ul>
+                <div className='history_content_headings bold'>
+                    {items.map((element) =>
+                        <p key={element.key}>{element.name}</p>
+                    )}
+                </div>
               
-                {newList.map((element) =>
+                {history_items.map((element) =>
                     <div className='history_content_item rounded'>
                         <p className='mb-0'>
-                            {element["date"]}
+                            {element.date}
                         </p>
                         <p className='mb-0'>
-                            {element["alert"]}
+                            {element.alert}
                         </p>
                         <p className='mb-0'>
-                            {element["time"]}
+                            {element.time}
                         </p>
                         <p className='mb-0'>
-                            <Link to="{element['location']}" className='text-decoration-none '>Live Map</Link>
+                            <Link to="/dashboard" className='text-decoration-none '>Live Map</Link>
                         </p>
                     </div>
                 )}

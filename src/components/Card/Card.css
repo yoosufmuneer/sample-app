@@ -1,5 +1,5 @@
-.nav-item:hover,.nav-item:active,.nav-item:first-child{
-    border-bottom: 0.3em solid #ff1149;
+button[aria-selected="true"]{
+    border-bottom: 0.3em solid #ff1149 !important;
 }
 
 .nav-item{
@@ -14,15 +14,16 @@
 .content_item{
     align-items: center;
     display: grid;
-    grid-template-columns: 15% 50% 10% 25% !important;
+    grid-template-columns: 15% 60% 25% !important;
 }
 
 .nav-link{
     margin-bottom: 0 !important;
+    width: 100%;
 }
 
 .dot-image{
-    grid-column: 4/5;
+    grid-column: -2/-1;
     width: 5%;
     margin-left: 90%;
 }
