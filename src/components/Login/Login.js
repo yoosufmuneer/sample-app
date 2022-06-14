@@ -1,5 +1,6 @@
 import { Container,Row, Col, Button, Image} from 'react-bootstrap';
 import { useState} from 'react';
+import {Navigate} from 'react-router-dom';
 import "./Login.css";
 import artwork from '../../assets/login_artwork.svg';
 
@@ -7,13 +8,32 @@ const Login = () => {
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [errorMessage, setErrorMessage] = useState([]);
+    const [errorMessage, setErrorMessage] = useState();
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
 
     const handleSubmit = e =>{
         e.preventDefault();
 
-        setUsername('');
-        setPassword('');
+        //Login Validation
+        if(username == null || password == null){
+            setErrorMessage('Please enter valid inputs');        
+            setUsername('');
+            setPassword('');
+        }
+        else{
+            setErrorMessage('');
+            setIsLoggedIn(true);
+            
+        }
+        
+    }
+
+    //Login Redirect logic
+    if(isLoggedIn){
+        return (
+            <Navigate to="/dashboard"/>            
+        )
     }
 
     return(
@@ -36,7 +56,6 @@ const Login = () => {
                                 value = {username}
                                 required
                             />
-                            <p id='errorMessage' className='text-danger pt-2'>{errorMessage}</p>
                         </Col>
                         <Col className='pt-2 pb-2'>
                             <label htmlFor='password' id='passwordLabel'>Password</label>

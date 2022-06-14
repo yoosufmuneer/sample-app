@@ -9,26 +9,16 @@ import "./History.css";
 
 const History = ({style, username}) => {
 
-    const handleClick = (text) =>{
-        // switch (event.target.)
-        switch (text){
-            case "location":
-
-            return
-            
-            break;
-        }
-    }
 
     return(
         <Container className={'rounded shadow-sm bg-white history dashboard_right ' + style} >
             <div className="history_header">
                 <span className='history_span'><span className="bold">History</span>({username})</span>
                 <div className='vr'></div>
-                <Link to="/dashboard/" className='text-decoration-none history_link' onClick={handleClick("all")}>All</Link>
-                <Link to="" className='text-decoration-none history_link' onClick={handleClick("location")}>Location</Link>
-                <Link to="" className='text-decoration-none history_link' onClick={handleClick("message")}>Message</Link>
-                <Link to="" className='text-decoration-none history_link' onClick={handleClick("alert")}>Alert</Link>
+                <Link to="/dashboard/" className='text-decoration-none history_link'>All</Link>
+                <Link to="" className='text-decoration-none history_link'>Location</Link>
+                <Link to="" className='text-decoration-none history_link'>Message</Link>
+                <Link to="" className='text-decoration-none history_link'>Alert</Link>
                 <div className="text-right"><img className="filter_image" src={filter_image} alt="Filter Icon"/></div>
             </div>
             <hr/>
