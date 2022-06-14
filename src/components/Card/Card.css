@@ -41,3 +41,13 @@ button[aria-selected="true"]{
 p{
     margin: 0;
 }
+
+.np-0{
+    padding: 2%;
+    margin: 0% 5% 2% 5%;
+}
+@media screen and (max-width:1000px){
+    .tab-item>p{
+        text-align: right;
+    }
+}

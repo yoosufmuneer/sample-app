@@ -26,14 +26,6 @@
     height: 1em;
 }
 
-.map-container{
-    grid-row:2 / 4;
-}
-
-.map-container-resize{
-    grid-row: 2/3;
-}
-
 .map-arrow::before{
     content: 'Scroll below';
     columns: black;

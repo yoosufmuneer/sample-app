@@ -12,6 +12,7 @@ const Dashboard =() =>{
     const [arrowStyle, setArrowStyle] = useState('map-arrow');
     const [arrowTextStyle, setArrowTextStyle] = useState('d-none');
     const [historyContainerStyle, sethistoryContainerStyle] = useState('');
+    const [cardStyle, setCardStyle] = useState('');
 
     let handleClick = () =>{
         // Flips Arrow from up to down & resizes map & history containers
@@ -21,12 +22,14 @@ const Dashboard =() =>{
             setArrowStyle('map-arrow rotate-360');
             setArrowTextStyle('d-none');
             sethistoryContainerStyle('');
+            setCardStyle('');
         }
         else{
             setMapStyle('map-container-resize');
             setArrowStyle('map-arrow rotate-180');
             setArrowTextStyle('');
             sethistoryContainerStyle('history-resize');
+            setCardStyle('card-resize');
         }
     };
 
@@ -34,7 +37,7 @@ const Dashboard =() =>{
     <section className="dashboard_container">
         <NavBar/>
         <Header title="Monitor"/>
-        <Card/>
+        <Card style={cardStyle}/>
         <Map handleClick = {handleClick} map = {mapStyle} arrow = {arrowStyle} text={arrowTextStyle}/>  
         <History username="Jason Burnette" style={historyContainerStyle}/>      
     </section>

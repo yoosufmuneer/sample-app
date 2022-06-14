@@ -9,9 +9,6 @@ import "./History.css";
 
 const History = ({style, username}) => {
 
-    const [active, setActive] = useState();
-
-
     const handleClick = (text) =>{
         // switch (event.target.)
         switch (text){
@@ -38,7 +35,7 @@ const History = ({style, username}) => {
             <section className='history_content'>
                 <div className='history_content_headings bold'>
                     {items.map((element) =>
-                        <p key={element.key}>{element.name}</p>
+                        <p>{element.name}</p>
                     )}
                 </div>
               
