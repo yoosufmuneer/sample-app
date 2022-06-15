@@ -1,8 +1,11 @@
-import { Container,Row, Col, Button, Image} from 'react-bootstrap';
+import { Container,Row, Col, Button} from 'react-bootstrap';
 import { useState} from 'react';
 import {Navigate} from 'react-router-dom';
 import "./Login.css";
 import artwork from '../../assets/login_artwork.svg';
+import axios from '../../api/axios';
+
+const LOGIN_URL = '/user/login';
 
 const Login = () => {
 
@@ -12,7 +15,7 @@ const Login = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
 
-    const handleSubmit = e =>{
+    const handleSubmit = async(e) =>{
         e.preventDefault();
 
         //Login Validation
@@ -20,13 +23,30 @@ const Login = () => {
             setErrorMessage('Please enter valid inputs');        
             setUsername('');
             setPassword('');
+            return;
         }
-        else{
-            setErrorMessage('');
+
+        try {
+            const response = await axios.post(
+              LOGIN_URL,
+            {
+                "username" : username,
+                "password" : password
+            },
+            {
+                headers: { "Content-Type": "application/json" },
+                withCredentials: false,
+            }
+            );
+            // const accessToken = response?.data?.accessToken;
+            // setUsername("");
+            // setPassword("");
             setIsLoggedIn(true);
-            
-        }
-        
+            setErrorMessage("");
+
+          } catch (error) {
+            setErrorMessage("Login Failed");
+        }      
     }
 
     //Login Redirect logic
