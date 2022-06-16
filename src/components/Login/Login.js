@@ -9,8 +9,8 @@ const LOGIN_URL = '/user/login';
 
 const Login = () => {
 
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
     const [errorMessage, setErrorMessage] = useState();
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
@@ -20,9 +20,9 @@ const Login = () => {
 
         //Login Validation
         if(username == null || password == null){
-            setErrorMessage('Please enter valid inputs');        
-            setUsername('');
-            setPassword('');
+            setErrorMessage("Please enter valid inputs");        
+            setUsername("");
+            setPassword("");
             return;
         }
 
@@ -38,9 +38,11 @@ const Login = () => {
                 withCredentials: false,
             }
             );
+
+            localStorage.setItem('access_token', response?.data?.token);
+
             // const accessToken = response?.data?.accessToken;
-            // setUsername("");
-            // setPassword("");
+
             setIsLoggedIn(true);
             setErrorMessage("");
 
@@ -58,37 +60,37 @@ const Login = () => {
 
     return(
         <Container className="container-fluid p-5">
-            <Row className='bg-white p-5 rounded shadow'>
+            <Row className="bg-white p-5 rounded shadow">
                 <Col className="pt-3 pb-3 align-self-center justify-content-center d-none d-sm-block">
-                    <img src={artwork} id="artwork" alt='Login Graphic'/>
+                    <img src={artwork} id="artwork" alt="Login Graphic"/>
                 </Col>
                 <Col className="pt-3 pb-3 align-self-center justify-content-center">                    
-                    <form className='formGrid' onSubmit={handleSubmit} >
+                    <form className="formGrid" onSubmit={handleSubmit} >
                     <h1>Log In</h1>
-                        <Col className='pt-2 pb-2 '>
-                            <label htmlFor='username' id='usernameLabel' className=''>Username</label>
+                        <Col className="pt-2 pb-2">
+                            <label htmlFor="username" id="usernameLabel" className="">Username</label>
                         </Col>
-                        <Col className='pt-2 pb-2'>
+                        <Col className="pt-2 pb-2">
                             <input 
-                                type='text' 
-                                id='username'
-                                onChange={(e) => setUsername(e.target.value)}
+                                type="text" 
+                                id="username"
+                                onChange={(e) => {setUsername(e.target.value);setErrorMessage("")}}
                                 value = {username}
                                 required
                             />
                         </Col>
-                        <Col className='pt-2 pb-2'>
-                            <label htmlFor='password' id='passwordLabel'>Password</label>
+                        <Col className="pt-2 pb-2">
+                            <label htmlFor="password" id="passwordLabel">Password</label>
                         </Col>
-                        <Col className='pt-2 pb-2'>
+                        <Col className="pt-2 pb-2">
                             <input 
-                                type='password' 
-                                id='password'
-                                onChange={(e) => setPassword(e.target.value)}
+                                type="password"
+                                id="password"
+                                onChange={(e) => {setPassword(e.target.value);setErrorMessage("")}}
                                 value = {password}
                                 required
                             />
-                            <p id='errorMessage' className='text-danger'>{errorMessage}</p>
+                            <p id="errorMessage" className="text-danger">{errorMessage}</p>
                         </Col>
                         <Col>
                             <Button as="input" className="bg-danger pt-2" type="submit" value="Login" />
