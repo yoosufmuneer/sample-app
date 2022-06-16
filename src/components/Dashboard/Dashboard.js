@@ -20,12 +20,13 @@ const Dashboard =() =>{
     const [cardStyle, setCardStyle] = useState('');
     const [cardData, setCardData ] = useState([]);
     const [historyData, setHistoryData ] = useState([]);
-    const [historyDataId, setHistoryDataId ] = useState(1);
     const [isDataLoaded, setIsDataLoaded] = useState(true);
+    const [userId, setUserId] = useState(1);
 
 
     useEffect(() => {
         getCardData();
+        getHistoryData(userId);
     },[]);
 
     let handleClick = () =>{
@@ -47,6 +48,8 @@ const Dashboard =() =>{
         }
     };
 
+    
+
 
     const access_token = localStorage.getItem('access_token');
 
@@ -58,7 +61,11 @@ const Dashboard =() =>{
             }
         })
         .then((res) => {
-            setCardData(res.data);
+            const updateRes = res.data.map((element,i) =>({
+                ...element,
+                key:{i} ,
+            }));
+            setCardData(updateRes);
         })
         .catch((error) => {
             alert("Error Loading Data");
@@ -82,22 +89,20 @@ const Dashboard =() =>{
         })
         .then((res) => {
             setHistoryData(res.data);
-            console.log(historyData);
         })
-        .catch((error) => {
+        .catch((error) => { 
             console.error(error);
         });
     };
 
-
-
     return(
+
     <section className="dashboard_container">
         <NavBar/>
         <Header title="Monitor"/>
-        <Card style={cardStyle} data={cardData} updateData = {setHistoryDataId}/>
+        <Card style={cardStyle} data={cardData} setUserId={setUserId}/>
         <Map handleClick = {handleClick} map = {mapStyle} arrow = {arrowStyle} text={arrowTextStyle}/>  
-        <History username="Jason Burnette" style={historyContainerStyle}/>      
+        <History username={historyData.user} data={historyData.logs} style={historyContainerStyle}/>      
     </section>
     )
 }

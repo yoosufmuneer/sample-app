@@ -1,11 +1,11 @@
-import { Container,Row, Col, Button} from 'react-bootstrap';
-import { useState} from 'react';
-import {Navigate} from 'react-router-dom';
+import { Container,Row, Col, Button} from "react-bootstrap";
+import { useState} from "react";
+import {Navigate} from "react-router-dom";
 import "./Login.css";
-import artwork from '../../assets/login_artwork.svg';
-import axios from '../../api/axios';
+import artwork from "../../assets/login_artwork.svg";
+import axios from "../../api/axios";
 
-const LOGIN_URL = '/user/login';
+const LOGIN_URL = "/user/login";
 
 const Login = () => {
 
@@ -39,7 +39,8 @@ const Login = () => {
             }
             );
 
-            localStorage.setItem('access_token', response?.data?.token);
+            localStorage.setItem("access_token", response?.data?.token);
+
 
             // const accessToken = response?.data?.accessToken;
 
