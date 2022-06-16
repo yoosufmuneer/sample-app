@@ -21,3 +21,9 @@ Map zoom in,zoom out and reset buttons are functional.
 2/3 APIs(Login & UserList) were integrated successfully.
 
 User logs was integrated partially(user retrieval works).
+
+#Login
+![image](https://user-images.githubusercontent.com/16056956/174109345-73c52d46-73ca-4518-bd71-6579a0dd95d0.png)
+
+#Dashboard
+![Dashboard](https://user-images.githubusercontent.com/16056956/174109481-32235e97-1146-4c4a-98d9-25f7fb5ef45b.png)
